@@ -1,0 +1,48 @@
+{
+  "name": "@akeyless-community/postman-connector",
+  "version": "0.1.0",
+  "description": "Akeyless native connector for Postman Local Vault — OIDC + JWT auth, secret linking, and a setup/verify toolkit",
+  "license": "MIT",
+  "author": "Akeyless Community",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akeyless-community/postman-akeyless-connector.git"
+  },
+  "homepage": "https://github.com/akeyless-community/postman-akeyless-connector#readme",
+  "keywords": [
+    "akeyless",
+    "postman",
+    "postman-vault",
+    "oidc",
+    "jwt",
+    "secrets",
+    "connector"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "akeyless-postman-verify": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "scripts",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test test/**/*.test.ts",
+    "verify": "tsx src/cli.ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}
